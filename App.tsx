@@ -1,21 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Platform, SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+
+import { theme } from './src/global/styles/theme';
+import { Routes } from './src/routes';
+import { Background } from './src/components/Background';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Background>
+      <SafeAreaView style = {styles.topSafeArea}/>
+      {Platform.OS === 'android' && 
+        <StatusBar
+          backgroundColor = {theme.colors.dark_brown}
+          barStyle = 'light-content'
+          translucent = {false}
+        />
+      }
+      {Platform.OS === 'ios' && 
+        <StatusBar
+          backgroundColor = 'transparent'
+          barStyle = 'light-content'
+          translucent = {false}
+        />
+      }
+      <Routes/>
+    </Background>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  topSafeArea: {
+    backgroundColor: theme.colors.dark_brown,
+    flex: 0
+  }
+})
