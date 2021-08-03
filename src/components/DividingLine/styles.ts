@@ -4,9 +4,12 @@ import { theme } from '../../global/styles/theme';
 export const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
+    },
+    line: {
         backgroundColor: theme.colors.dark_brown,
-        height: 75,
-        justifyContent: 'center',
-        width: '100%'
+        borderRadius: 10,
+        height: 5,
+        marginTop: 26,
+        width: '90%'
     }
 })

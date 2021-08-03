@@ -1,17 +1,11 @@
 import React from 'react';
-import { ReactNode } from 'react';
 import { View } from 'react-native';
-
 import { styles } from './styles';
 
-type Props = {
-    children: ReactNode
-}
-
-export function Header({children} : Props) {
+export function DividingLine() {
     return (
         <View style = {styles.container}>
-           {children}
+            <View style = {styles.line}/>
         </View>
     )
 }

@@ -8,6 +8,7 @@ export function Footer() {
     return (
         <View style = {styles.container}>
             <View style = {styles.footer}>
+                <MainButton/>
                 {/* botões secundários */}
             </View>
         </View>
